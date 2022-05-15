@@ -6,18 +6,18 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: micro-service-1-id
+        - id: banque
           uri: http://localhost:8081/
           predicates:
             - Path=/**
-        - id: micro-service-2-id
-          uri: http://localhost:8081/
+        - id: site-E-commerce-backend
+          uri: http://localhost:8090/
           predicates:
-            - Path=/formations/**
-        - id: micro-service-3-id
-          uri: http://localhost:8081/
+            - Path=/**
+        - id: site-E-commerce-frontend
+          uri: http://localhost:4200/
           predicates:
-            - Path=/etudiants/**
+            - Path=/**
           filters:
             - AddRequestHeader=first-request, first-request-header
             - AddResponseHeader=first-response, first-response-header
